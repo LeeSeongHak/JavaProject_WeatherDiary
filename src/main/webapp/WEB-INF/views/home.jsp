@@ -10,6 +10,8 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<div><p><a></a></p></div>
+<div><p><a href="weather"> 날씨 테스트 </a></p></div>
+
 </body>
 </html>
