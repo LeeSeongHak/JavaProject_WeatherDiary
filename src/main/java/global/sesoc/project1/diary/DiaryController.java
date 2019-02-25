@@ -14,7 +14,6 @@ public class DiaryController {
 	
 	private final static Logger logger = LoggerFactory.getLogger(DiaryController.class);
 	
-	//다이어리 목록 페이지
 	@RequestMapping(value = "/diaryList", method = RequestMethod.GET )
 	public String diary_board(){
 		
