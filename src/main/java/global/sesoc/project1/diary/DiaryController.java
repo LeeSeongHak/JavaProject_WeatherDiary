@@ -1,0 +1,23 @@
+package global.sesoc.project1.diary;
+
+
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class DiaryController {
+	
+	private final static Logger logger = LoggerFactory.getLogger(DiaryController.class);
+	
+	//다이어리 목록 페이지
+	@RequestMapping(value = "/diaryList", method = RequestMethod.GET )
+	public String diary_board(){
+		
+		return "diaryList";
+	}
+}
