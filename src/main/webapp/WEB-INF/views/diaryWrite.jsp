@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>home</title>
+<title>diaryWrite</title>
 </head>
-<body>
-<a href="diaryList">다이어리 목록</a>
+<body><h1>다이어리 작성</h1>
+
 </body>
 </html>
