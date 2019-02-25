@@ -1,4 +1,4 @@
-package global.sesoc.project1.diary;
+package global.sesoc.project1.controller;
 
 
 
@@ -17,6 +17,6 @@ public class DiaryController {
 	@RequestMapping(value = "/diaryList", method = RequestMethod.GET )
 	public String diary_board(){
 		
-		return "diaryList";
+		return "diary/diaryList";
 	}
 }
