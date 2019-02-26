@@ -1,10 +1,16 @@
---ë‹¤ì´ì–´ë¦¬ ê¸€
+-- ´ÙÀÌ¾î¸® Å×ÀÌºí
 create table diary (
-	num			number	 		not null 	primary key,		--ê¸€ ë²ˆí˜¸
+	num			number	 		not null 	primary key,		--±Û¹øÈ£
 	id			varchar2(30) 	not null,						--id
-	emotion		varchar2(100), 									--ê¸°ë¶„
-	weather		varchar2(100),									--ë‚ ì”¨
-	title		varchar2(3000),									--ì œëª©
-	content 	varchar2(3000), 								--ë‚´ìš©
-	inputdate 	date 			default sysdate					--ì‘ì„±ë‚ ì§œ
+	emotion		varchar2(100), 									--°¨Á¤Ç¥Çö
+	weather		varchar2(100),									--³¯¾¾
+	title		varchar2(3000),									--Á¦¸ñ
+	content 	varchar2(3000), 								--³»¿ë
+	inputdate 	date 			default sysdate					--ÀÔ·ÂÀÏ
 );
+
+-- ´ÙÀÌ¾î¸® ÀÏ·Ã¹øÈ£¿¡ »ç¿ëÇÒ ½ÃÄö½º 
+create sequence diary_seq start with 1 increment by 1;
+
+-- ±Û ÀúÀå ¿¹
+insert into diary (num, id, emotion, weather, title, content) values (diary_seq.nextval, 'id', '°¨Á¤', '¸¼À½', 'Á¦¸ñ', '³»¿ë');

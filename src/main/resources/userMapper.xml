@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- diary SQL -->
+<mapper namespace="global.sesoc.project1.dao.UserMapper">
+
+<select id="login" parameterType="HashMap" resultType="UVO">
+	select * from userinfo where id = #{id} and password = #{password}
+</select>
+	
+	
+
+	
+</mapper>

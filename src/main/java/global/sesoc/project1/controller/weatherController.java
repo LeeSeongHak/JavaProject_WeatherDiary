@@ -16,5 +16,8 @@ public class weatherController {
 		return "weatherTest";
 	}
 	
-
+	@RequestMapping(value="map", method=RequestMethod.GET)
+	public String map(){
+		return "mapTest";
+	}
 }

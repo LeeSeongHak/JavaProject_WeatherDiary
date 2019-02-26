@@ -4,9 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="global.sesoc.project1.vo.CustomerVO" alias="CVO" />
+		<typeAlias type="global.sesoc.project1.vo.UserVO" alias="UVO" />
+		<typeAlias type="global.sesoc.project1.vo.DiaryVO" alias="DVO" />
 	</typeAliases>
 	<mappers>
+		<mapper resource="userMapper.xml" />
 		<mapper resource="diaryMapper.xml" />
 	</mappers>
 </configuration>

@@ -6,6 +6,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <script src="resources/js/jquery-3.3.1.min.js"></script>
 <script>
+$(document).ready(function(){
+	geoCode();
+});
+
+function geoCode() {
+	var faddr = '서울특별시 금천구 가산동 371-50';
+	var geocoder;
+	geocoder = new google.maps.Geocoder();
+	geocoder.geocode( { 'address': faddr}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			var faddr_lat = results[0].geometry.location.lat();	//위도
+			var faddr_lng = results[0].geometry.location.lng();	//경도
+		} else {
+			var faddr_lat = "";
+			var faddr_lng = "";
+		}
+		document.frm.sangchaji_faddr_lat.value = faddr_lat;
+		document.frm.sangchaji_faddr_lng.value = faddr_lng;
+		alert('주소 : ' + faddr + '\n\n위도 : ' + faddr_lat + '\n\n경도 : ' + faddr_lng);
+		return;
+	});
+}
+
 var apiURI = "http://api.openweathermap.org/data/2.5/weather?lat="+"37.56826"+"&lon="+"126.977829"+"&appid="+"c1ae780151cf0ef8cdce02451a0dcc70";
 $.ajax({
     url: apiURI,
