@@ -29,7 +29,7 @@ function check(){
 
 <div class="login">
     <h1>일 품 달</h1>
-    <h3>달빛을 벗삼아 쓰는 일기</h3>
+    <h3>Whisper to the moon <br>월량대표아적심</h3>
 	<form action="login" method="post" onsubmit="return check()">
         <input type="text" name="id" placeholder="Username" id="id" required="required" />
         <input type="password" name="password" placeholder="Password" id="password" required="required" />
@@ -44,5 +44,6 @@ function check(){
 <div><p><a href="map"> 맵 테스트 </a></p></div>
 <div><p><a href="weather"> 날씨 테스트 </a></p></div>
 <div><p><a href="diaryList">다이어리 리스트</a></p></div>
+<div><p><a href="translate">번역</a></p></div>
 </body>
 </html>

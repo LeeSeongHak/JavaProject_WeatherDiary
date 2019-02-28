@@ -1,5 +1,7 @@
 package global.sesoc.project1.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,5 +21,15 @@ public class weatherController {
 	@RequestMapping(value="map", method=RequestMethod.GET)
 	public String map(){
 		return "mapTest";
+	}
+	
+	@RequestMapping(value="split", method=RequestMethod.POST)
+	public void split(String loc, HttpSession session){
+		String ar[] = loc.split("\n");
+		String lat = ar[1].substring(4);
+		String lng = ar[2].substring(4);
+		session.setAttribute("lat", lat);
+		session.setAttribute("lng", lng);
+		return;
 	}
 }

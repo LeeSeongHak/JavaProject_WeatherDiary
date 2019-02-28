@@ -6,21 +6,17 @@ public class UserVO {
 	private String name;
 	private String country;
 	private String region;
-	private String question;
-	private String answer;
 
 	public UserVO(){
 		
 	}
 	
-	public UserVO(String id, String password, String name, String country, String region, String question, String answer){
+	public UserVO(String id, String password, String name, String country, String region){
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.country = country;
 		this.region = region;
-		this.question = question;
-		this.answer = answer;
 	}
 
 	public String getUserid() {
@@ -63,26 +59,10 @@ public class UserVO {
 		this.region = region;
 	}
 
-	public String getQuestion() {
-		return question;
-	}
-
-	public void setQuestion(String question) {
-		this.question = question;
-	}
-
-	public String getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
-
 	@Override
 	public String toString() {
 		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", country=" + country
-				+ ", region=" + region + ", question=" + question + ", answer=" + answer + "]";
+				+ ", region=" + region + "]";
 	}
 	
 }
