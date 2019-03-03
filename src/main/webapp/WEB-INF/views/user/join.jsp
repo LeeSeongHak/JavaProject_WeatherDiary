@@ -1,42 +1,93 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>�α���</title>
-<link href="resources/css/join.css" rel="stylesheet" type="text/css">
-<script src="resources/js/join.js"></script>
+<link href="resources/css/home.css" rel="stylesheet" type="text/css">
+<title>Join</title>
+<script src="resources/js/jquery-3.3.1.min.js"></script>
+<script>
+function idCheck(){
+	//("창 링크(controller의 action값. 주소창에 직접 링크 띄우는 것이므로 get방식.)", "창 이름", "창의 모양")
+	window.open("idCheck", "idWin", "top=200, left=500, width=400, height=400, menubar=no");
+}
+
+function join(){
+	var f = document.getElementById("form");
+	var id = document.getElementById("id");
+	var pw1 = document.getElementById("password1");
+	var pw2 = document.getElementById("password2");
+	var name = document.getElementById("name");
+	var country = document.getElementById("country");
+	var region = document.getElementById("region");
+
+	if(id.value.length < 3){
+		alert('아이디를 3글자 이상 입력하세요');
+		return false;
+	}
+	if(pw1.value.length < 3){
+		alert('비밀번호를 3글자 이상 입력하세요');
+		return false;
+	}
+	if(pw1.value != pw2.value){
+		alert('입력된 비밀번호와 재확인 비밀번호가 다릅니다.');
+		return false;
+	}
+	if(name.value.length == 0){
+		alert('이름을 입력하세요');
+		return false;
+	}
+	if(country.value.length == 0){
+		alert('국가를 입력하세요');
+		return false;
+	}
+	if(region.value.length == 0){
+		alert('지역을 입력하세요');
+		return false;
+	}
+	if(confirm('가입하시겠습니까?')){
+		f.submit();
+	}
+}
+</script>
 </head>
 <body>
-	<form>
-        <svg id="ryan" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,150 C0,65 120,65 120,150" fill="#e0a243" stroke="#000" stroke-width="2.5" />
-            <g class="ears">
-                <path d="M46,32 L46,30 C46,16 26,16 26,30 L26,32" fill="#e0a243" stroke="#000" stroke-width="2.5" stroke-linecap="round" transform="rotate(-10,38,24)" />
-                <path d="M74,32 L74,30 C74,16 94,16 94,30 L94,32" fill="#e0a243" stroke="#000" stroke-width="2.5" stroke-linecap="round" transform="rotate(10,82,24)" />
-            </g>
-            <circle cx="60" cy="60" r="40" fill="#e0a243" stroke="#000" stroke-width="2.5" />
-            <g class="eyes">
-                <!-- left eye and eyebrow-->
-                <line x1="37" x2="50" y1="46" y2="46" stroke="#000" stroke-width="3" stroke-linecap="round" />
-                <circle cx="44" cy="55" r="3" fill="#000" />
-                <!-- right eye and eyebrow -->
-                <line x1="70" x2="83" y1="46" y2="46" stroke="#000" stroke-width="3" stroke-linecap="round" />
-                <circle cx="76" cy="55" r="3" fill="#000" />
-            </g>
-            <g class="muzzle">
-                <path d="M60,66 C58.5,61 49,63 49,69 C49,75 58,77 60,71 M60,66 C61.5,61 71,63 71,69 C71,75 62,77 60,71" fill="#fff" />
-                <path d="M60,66 C58.5,61 49,63 49,69 C49,75 58,77 60,71 M60,66 C61.5,61 71,63 71,69 C71,75 62,77 60,71" fill="#fff" stroke="#000" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
-                <polygon points="59,63.5,60,63.4,61,63.5,60,65" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round" />
-            </g>
-            <path d="M40,105 C10,140 110,140 80,105 L80,105 L70,111 L60,105 L50,111 L40,105" fill="#fff" />
-        </svg>
-        <input type="text" placeholder="ID">
-        <input type="password" placeholder="Password">
-        <div align="center">
-        <a href="index.html" ><input type="button" value="�α���" onclick="login()" /></a>
-        </div>
-    </form>
+<br><br><br><br><br>
+<div class="join" align="center">
+    <h1><font color="white">회원가입</font></h1>
+    <form action="join" method="post" id="form" onsubmit="return join()">
+		<table>
+			<tr>
+				<th><font color="white">아이디</font></th>
+				<td colspan="2"><input type="text" id=id" name="id" placeholder="현재 사용중인 이메일을 입력하세요." size="30"></td>
+				<td><input type="button" value="ID중복확인" onclick="idCheck()"></td>
+			</tr>
+			<tr>
+				<th><font color="white">비밀번호</font></th>
+				<td colspan="2"><input type="password" id="password1" name="password" placeholder="3글자 이상 입력하세요."  size="30"></td>
+			</tr>
+			<tr>
+				<th><font color="white">비밀번호 재확인</font></th>
+				<td colspan="2"><input type="password" id="password2" size="30" placeholder="비밀번호를 다시 한 번 입력하세요."></td>
+			</tr>
+			<tr>
+				<th><font color="white">이름</font></th>
+				<td colspan="2"><input type="text" id="name" name="name" size="30" placeholder="너의 이름은"></td>
+			</tr>
+			<tr>
+				<th><font color="white">거주 국가</font></th>
+				<td colspan="2"><input type="text" id="country" name="country" size="30" placeholder="너의 국가는"></td>
+			</tr>
+			<tr>
+				<th><font color="white">거주 지역</font></th>
+				<td colspan="2"><input type="text" id="region" name="region" size="30" placeholder="너의 지역은"></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" size="30" value="가입하기">
+			</tr>
+		</table>
+	</form>
+</div>
+
 </body>
 </html>
