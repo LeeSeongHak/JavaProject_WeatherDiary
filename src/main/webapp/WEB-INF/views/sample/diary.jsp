@@ -1,11 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="resources/images/apple-icon.png">
+  <link rel="icon" type="image/png" href="resources/images/favicon.png">
   <title>
     Black Dashboard by Creative Tim
   </title>
@@ -13,19 +15,25 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="resources/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <link href="resources/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="resources/demo/demo.css" rel="stylesheet" />
+  <script>
+function diaryWrite(){
+	window.open('http://localhost:8888/project1/diaryWrite',''
+,'width=700, height=600, left=500, top=100, );
+	 
+  }
+  </script>
+  
 </head>
 
 <body class="">
   <div class="wrapper">
     <div class="sidebar">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
-    -->
+    
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-mini">
@@ -36,58 +44,42 @@
           </a>
         </div>
         <ul class="nav">
+         <li class="active ">
           <li>
-            <a href="./dashboard.html">
+            <a href="diary">
+              <i class="tim-icons icon-atom"></i>
+              <p>Diary</p>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
+         
           <li>
-            <a href="./icons.html">
-              <i class="tim-icons icon-atom"></i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
+            <a href="diaryMap">
               <i class="tim-icons icon-pin"></i>
               <p>Maps</p>
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="notification">
               <i class="tim-icons icon-bell-55"></i>
               <p>Notifications</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="userProfile">
               <i class="tim-icons icon-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="active ">
-            <a href="./typography.html">
-              <i class="tim-icons icon-align-center"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li>
-            <a href="./rtl.html">
+            <a href="language">
               <i class="tim-icons icon-world"></i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="tim-icons icon-spaceship"></i>
-              <p>Upgrade to PRO</p>
+              <p>Language</p>
             </a>
           </li>
         </ul>
@@ -105,7 +97,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">Typography</a>
+            <a class="navbar-brand" href="javascript:void(0)">Icons</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -148,7 +140,7 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png" alt="Profile Photo">
+                    <img src="resources/images/anime3.png" alt="Profile Photo">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
@@ -190,153 +182,17 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header mb-5">
-                <h5 class="card-category">Black Table Heading</h5>
-                <h3 class="card-title">Created using Poppins Font Family</h3>
-              </div>
-              <div class="card-body">
-                <div class="typography-line">
-                  <h1>
-                    <span>Header 1</span>The Life of Black Dashboard </h1>
-                </div>
-                <div class="typography-line">
-                  <h2>
-                    <span>Header 2</span>The Life of Black Dashboard </h2>
-                </div>
-                <div class="typography-line">
-                  <h3>
-                    <span>Header 3</span>The Life of Black Dashboard </h3>
-                </div>
-                <div class="typography-line">
-                  <h4>
-                    <span>Header 4</span>The Life of Black Dashboard </h4>
-                </div>
-                <div class="typography-line">
-                  <h5>
-                    <span>Header 5</span>The Life of Black Dashboard </h5>
-                </div>
-                <div class="typography-line">
-                  <h6>
-                    <span>Header 6</span>The Life of Black Dashboard </h6>
-                </div>
-                <div class="typography-line">
-                  <p>
-                    <span>Paragraph</span>
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
-                  </p>
-                </div>
-                <div class="typography-line">
-                  <span>Quote</span>
-                  <blockquote>
-                    <p class="blockquote blockquote-primary">
-                      "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-                      <br>
-                      <br>
-                      <small>
-                        - Noaa
-                      </small>
-                    </p>
-                  </blockquote>
-                </div>
-                <div class="typography-line">
-                  <span>Muted Text</span>
-                  <p class="text-muted">
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div class="typography-line">
-                  <span>Primary Text</span>
-                  <p class="text-primary">
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</p>
-                </div>
-                <div class="typography-line">
-                  <span>Info Text</span>
-                  <p class="text-info">
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                </div>
-                <div class="typography-line">
-                  <span>Success Text</span>
-                  <p class="text-success">
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                </div>
-                <div class="typography-line">
-                  <span>Warning Text</span>
-                  <p class="text-warning">
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div class="typography-line">
-                  <span>Danger Text</span>
-                  <p class="text-danger">
-                    I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                </div>
-                <div class="typography-line">
-                  <h2>
-                    <span>Small Tag</span>
-                    Header with small subtitle
-                    <br>
-                    <small>Use "small" tag for the headers</small>
-                  </h2>
-                </div>
-                <div class="typography-line">
-                  <span>Lists</span>
-                  <div class="row">
-                    <div class="col-md-3">
-                      <h5>Unordered List</h5>
-                      <ul>
-                        <li>List Item</li>
-                        <li>List Item</li>
-                        <li class="list-unstyled">
-                          <ul>
-                            <li>List Item</li>
-                            <li>List Item</li>
-                            <li>List Item</li>
-                          </ul>
-                        </li>
-                        <li>List Item</li>
-                      </ul>
-                    </div>
-                    <div class="col-md-3">
-                      <h5>Ordered List</h5>
-                      <ol>
-                        <li>List Item</li>
-                        <li>List Item</li>
-                        <li>List item</li>
-                        <li>List Item</li>
-                      </ol>
-                    </div>
-                    <div class="col-md-3">
-                      <h5>Unstyled List</h5>
-                      <ul class="list-unstyled">
-                        <li>List Item</li>
-                        <li>List Item</li>
-                        <li>List item</li>
-                        <li>List Item</li>
-                      </ul>
-                    </div>
-                    <div class="col-md-3">
-                      <h5>Inline List</h5>
-                      <ul class="list-inline">
-                        <li class="list-inline-item">List1</li>
-                        <li class="list-inline-item">List2</li>
-                        <li class="list-inline-item">List3</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="typography-line">
-                  <span>Code</span>
-                  <p>This is
-                    <code>.css-class-as-code</code>, an example of an inline code element. Wrap inline code within a
-                    <code> &lt;code&gt;...&lt;/code&gt;</code>tag.
-                  </p>
-                  <pre>1. #This is an example of preformatted text.<br/>2. #Here is another line of code</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="card-header">
+                <h3 class="title">&nbsp&nbspDiary</h3>
+             </div>
+             	<p>__님 오늘 어땠나요?<a href='javascript:void(0);'onclick="diaryWrite();">일기작성</span><p>
+          
+           </div>
+           
+         </div>
+       </div>
+     </div>
+             
       <footer class="footer">
         <div class="container-fluid">
           <ul class="nav">

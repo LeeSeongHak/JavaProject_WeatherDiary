@@ -1,16 +1,18 @@
--- ´ÙÀÌ¾î¸® Å×ÀÌºí
+-- ì¼ê¸°ì“°ê¸°
 create table diary (
-	num			number	 		not null 	primary key,		--±Û¹øÈ£
-	id			varchar2(30) 	not null,						--id
-	emotion		varchar2(100), 									--°¨Á¤Ç¥Çö
-	weather		varchar2(100),									--³¯¾¾
-	title		varchar2(3000),									--Á¦¸ñ
-	content 	varchar2(3000), 								--³»¿ë
-	inputdate 	date 			default sysdate					--ÀÔ·ÂÀÏ
+	num				number	 		not null 	primary key,	--ê¸€ë²ˆí˜¸
+	id				varchar2(30) 	not null,					--id
+	emotion			varchar2(100), 								--ê¸°ë¶„
+	weather			varchar2(100),								--ë‚ ì”¨
+	title			varchar2(3000),								--ì œëª©
+	content 		varchar2(3000), 							--ë‚´ìš©
+	inputdate 		date 			default sysdate,			--ì‘ì„±ë‚ ì§œ
+	originalfile	varchar2(200),								--ì›ë³¸ íŒŒì¼(ì›ë˜ ì´ë¦„)
+	savedfile		varchar2(100)								--ì²¨ë¶€íŒŒì¼(ì‹¤ì œ ì €ì¥ëœ ì´ë¦„)
 );
 
--- ´ÙÀÌ¾î¸® ÀÏ·Ã¹øÈ£¿¡ »ç¿ëÇÒ ½ÃÄö½º 
+--ê¸€ë²ˆí˜¸ ì‹œí€€ìŠ¤
 create sequence diary_seq start with 1 increment by 1;
 
--- ±Û ÀúÀå ¿¹
-insert into diary (num, id, emotion, weather, title, content) values (diary_seq.nextval, 'id', '°¨Á¤', '¸¼À½', 'Á¦¸ñ', '³»¿ë');
+--ì¼ê¸°ì“°ê¸° ë ˆì½”ë“œ ì˜ˆ
+insert into diary (num, id, emotion, weather, title, content) values (diary_seq.nextval, 'id', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½');

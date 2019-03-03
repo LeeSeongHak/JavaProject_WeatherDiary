@@ -1,11 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="resources/images/apple-icon.png">
+  <link rel="icon" type="image/png" href="resources/images/favicon.png">
   <title>
     Black Dashboard by Creative Tim
   </title>
@@ -13,15 +15,14 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="resources/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet" />
+  <link href="resources/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="resources/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class=" rtl menu-on-right ">
+<body class="">
   <div class="wrapper">
     <div class="sidebar">
       <!--
@@ -30,67 +31,52 @@
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-mini">
-            ط م
+            CT
           </a>
           <a href="javascript:void(0)" class="simple-text logo-normal">
-            توقيت الإبداعية
+            Creative Tim
           </a>
         </div>
         <ul class="nav">
-          <li>
-            <a href="./dashboard.html">
-              <i class="tim-icons icon-chart-pie-36"></i>
-              <p>لوحة القيادة</p>
-            </a>
-          </li>
-          <li>
-            <a href="./icons.html">
+          <li class="active ">
+           <li>
+            <a href="diary">
               <i class="tim-icons icon-atom"></i>
-              <p>الرموز</p>
+              <p>Diary</p>
             </a>
           </li>
           <li>
-            <a href="./map.html">
+            <a href="dashboard">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+         
+          <li>
+            <a href="diaryMap">
               <i class="tim-icons icon-pin"></i>
-              <p>خرائط</p>
+              <p>Map</p>
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="notifications">
               <i class="tim-icons icon-bell-55"></i>
-              <p>إخطارات</p>
+              <p>Notifications</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="userProfile">
               <i class="tim-icons icon-single-02"></i>
-              <p>ملف تعريفي للمستخدم</p>
+              <p>User Profile</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>قائمة الجدول</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="tim-icons icon-align-center"></i>
-              <p>طباعة</p>
-            </a>
-          </li>
-          <li>
-            <a href="./rtl.html">
+            <a href="language">
               <i class="tim-icons icon-world"></i>
-              <p>دعم RTL</p>
+              <p>Language</p>
             </a>
           </li>
-          <li>
-            <a href="./upgrade.html">
-              <i class="tim-icons icon-spaceship"></i>
-              <p>التطور للاحترافية</p>
-            </a>
-          </li>
+         
         </ul>
       </div>
     </div>
@@ -106,7 +92,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">RTL</a>
+            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -114,7 +100,7 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav  mr-auto">
+            <ul class="navbar-nav ml-auto">
               <li class="search-bar input-group">
                 <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
                   <span class="d-lg-none d-md-block">Search</span>
@@ -149,7 +135,7 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png" alt="Profile Photo">
+                    <img src="resources/images/anime3.png" alt="Profile Photo">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
@@ -193,29 +179,29 @@
             <div class="card card-chart">
               <div class="card-header ">
                 <div class="row">
-                  <div class="col-sm-6 text-right">
-                    <h5 class="card-category">مجموع الشحنات</h5>
-                    <h2 class="card-title">أداء</h2>
+                  <div class="col-sm-6 text-left">
+                    <h5 class="card-category">Total Shipments</h5>
+                    <h2 class="card-title">Performance</h2>
                   </div>
                   <div class="col-sm-6">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
                       <label class="btn btn-sm btn-primary btn-simple active" id="0">
                         <input type="radio" name="options" checked>
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block"> حسابات</span>
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Accounts</span>
                         <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span>
                       </label>
                       <label class="btn btn-sm btn-primary btn-simple" id="1">
                         <input type="radio" class="d-none d-sm-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block"> المشتريات</span>
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Purchases</span>
                         <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span>
                       </label>
                       <label class="btn btn-sm btn-primary btn-simple" id="2">
                         <input type="radio" class="d-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">جلسات</span>
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Sessions</span>
                         <span class="d-block d-sm-none">
                           <i class="tim-icons icon-tap-02"></i>
                         </span>
@@ -233,10 +219,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 text-right">
+          <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">شحنات كاملة</h5>
+                <h5 class="card-category">Total Shipments</h5>
                 <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> 763,215</h3>
               </div>
               <div class="card-body">
@@ -246,11 +232,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 text-right">
+          <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">المبيعات اليومية</h5>
-                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500€</h3>
+                <h5 class="card-category">Daily Sales</h5>
+                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500â¬</h3>
               </div>
               <div class="card-body">
                 <div class="chart-area">
@@ -259,10 +245,10 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 text-right">
+          <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">المهام المكتملة</h5>
+                <h5 class="card-category">Completed Tasks</h5>
                 <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
               </div>
               <div class="card-body">
@@ -274,17 +260,19 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-6 col-sm-6 text-center">
-            <div class="card  card-tasks text-left">
-              <div class="card-header text-right">
-                <h6 class="title d-inline">تتبع</h6>
-                <p class="card-category d-inline">اليوم</p>
-                <div class="dropdown float-left">
-                  <a class="btn btn-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tim-icons icon-settings-gear-63"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">عمل</a>
-                    <a class="dropdown-item" href="#">عمل آخر</a>
-                    <a class="dropdown-item" href="#">شيء آخر هنا</a>
+          <div class="col-lg-6 col-md-12">
+            <div class="card card-tasks">
+              <div class="card-header ">
+                <h6 class="title d-inline">Tasks(5)</h6>
+                <p class="card-category d-inline">today</p>
+                <div class="dropdown">
+                  <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
+                    <i class="tim-icons icon-settings-gear-63"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#pablo">Action</a>
+                    <a class="dropdown-item" href="#pablo">Another action</a>
+                    <a class="dropdown-item" href="#pablo">Something else</a>
                   </div>
                 </div>
               </div>
@@ -293,28 +281,7 @@
                   <table class="table">
                     <tbody>
                       <tr>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="" checked>
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td class="text-right">
-                          <p class="title">مركز معالجة موقع محور</p>
-                          <p class="text-muted">نص آخر هناالوثائق</p>
-                        </td>
-                        <td class="td-actions">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="مهمة تحرير">
-                            <i class="tim-icons icon-settings"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">
+                        <td>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox" value="">
@@ -324,39 +291,18 @@
                             </label>
                           </div>
                         </td>
-                        <td class="text-right">
-                          <p class="title">لامتثال GDPR</p>
-                          <p class="text-muted">الناتج المحلي الإجمالي هو نظام يتطلب من الشركات حماية البيانات الشخصية والخصوصية لمواطني أوروبا بالنسبة للمعاملات التي تتم داخل الدول الأعضاء في الاتحاد الأوروبي.</p>
+                        <td>
+                          <p class="title">Update the Documentation</p>
+                          <p class="text-muted">Dwuamish Head, Seattle, WA 8:47 AM</p>
                         </td>
-                        <td class="td-actions">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="مهمة تحرير">
-                            <i class="tim-icons icon-settings"></i>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
                           </button>
                         </td>
                       </tr>
                       <tr>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td class="text-right">
-                          <p class="title">القضاياالقضايا</p>
-                          <p class="text-muted">سيكونونقال 50٪ من جميع المستجيبين أنهم سيكونون أكثر عرضة للتسوق في شركة</p>
-                        </td>
-                        <td class="td-actions">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="مهمة تحرير">
-                            <i class="tim-icons icon-settings"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">
+                        <td>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox" value="" checked="">
@@ -366,39 +312,18 @@
                             </label>
                           </div>
                         </td>
-                        <td class="text-right">
-                          <p class="title">تصدير الملفات التي تمت معالجتها</p>
-                          <p class="text-muted">كما يبين التقرير أن المستهلكين لن يغفروا شركة بسهولة بمجرد حدوث خرق يعرض بياناتهم الشخصية.</p>
+                        <td>
+                          <p class="title">GDPR Compliance</p>
+                          <p class="text-muted">The GDPR is a regulation that requires businesses to protect the personal data and privacy of Europe citizens for transactions that occur within EU member states.</p>
                         </td>
-                        <td class="td-actions">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="مهمة تحرير">
-                            <i class="tim-icons icon-settings"></i>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
                           </button>
                         </td>
                       </tr>
                       <tr>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="" checked="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td class="text-right">
-                          <p class="title">الوصول إلى عملية التصدير</p>
-                          <p class="text-muted">سياسة السيء إنطلاق في قبل, مساعدة والمانيا أخذ قد. بل أما أمام ماشاء الشتاء،, تكاليف الإقتصادي بـ حين. ٣٠ يتعلّق للإتحاد ولم, وتم هناك مدينة بتحدّي إذ, كان بل عمل</p>
-                        </td>
-                        <td class="td-actions">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="مهمة تحرير">
-                            <i class="tim-icons icon-settings"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">
+                        <td>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox" value="">
@@ -408,13 +333,76 @@
                             </label>
                           </div>
                         </td>
-                        <td class="text-right">
-                          <p class="title">الافراج عن v2.0.0</p>
-                          <p class="text-muted">عن رئيس طوكيو البولندي لمّ, مايو مرجع وباءت قبل هو, تسمّى الطريق الإقتصادي ذات أن. لغات الإطلاق الفرنسية دار ان, بين بتخصيص الساحة اقتصادية أم. و الآخ</p>
+                        <td>
+                          <p class="title">Solve the issues</p>
+                          <p class="text-muted">Fifty percent of all respondents said they would be more likely to shop at a company </p>
                         </td>
-                        <td class="td-actions">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="مهمة تحرير">
-                            <i class="tim-icons icon-settings"></i>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Release v2.0.0</p>
+                          <p class="text-muted">Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM</p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Export the processed files</p>
+                          <p class="text-muted">The report also shows that consumers will not easily forgive a company once a breach exposing their personal data occurs. </p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Arival at export process</p>
+                          <p class="text-muted">Capitol Hill, Seattle, WA 12:34 AM</p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
                           </button>
                         </td>
                       </tr>
@@ -424,10 +412,10 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-sm-6">
+          <div class="col-lg-6 col-md-12">
             <div class="card ">
-              <div class="card-header text-right">
-                <h4 class="card-title">جدول بسيط</h4>
+              <div class="card-header">
+                <h4 class="card-title"> Simple Table</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -435,29 +423,29 @@
                     <thead class=" text-primary">
                       <tr>
                         <th>
-                          اسم
+                          Name
                         </th>
                         <th>
-                          بلد
+                          Country
                         </th>
                         <th>
-                          مدينة
+                          City
                         </th>
                         <th class="text-center">
-                          راتب
+                          Salary
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>
-                          رايس داكوتا
+                          Dakota Rice
                         </td>
                         <td>
-                          النيجر
+                          Niger
                         </td>
                         <td>
-                          العود-تورنهاوت
+                          Oud-Turnhout
                         </td>
                         <td class="text-center">
                           $36,738
@@ -465,13 +453,13 @@
                       </tr>
                       <tr>
                         <td>
-                          مينيرفا هوبر
+                          Minerva Hooper
                         </td>
                         <td>
-                          كوراساو
+                          CuraÃ§ao
                         </td>
                         <td>
-                          Sinaai-واس
+                          Sinaai-Waas
                         </td>
                         <td class="text-center">
                           $23,789
@@ -479,13 +467,13 @@
                       </tr>
                       <tr>
                         <td>
-                          سيج رودريجيز
+                          Sage Rodriguez
                         </td>
                         <td>
-                          هولندا
+                          Netherlands
                         </td>
                         <td>
-                          بايلي
+                          Baileux
                         </td>
                         <td class="text-center">
                           $56,142
@@ -493,13 +481,13 @@
                       </tr>
                       <tr>
                         <td>
-                          فيليب شانيه
+                          Philip Chaney
                         </td>
                         <td>
-                          كوريا، جنوب
+                          Korea, South
                         </td>
                         <td>
-                          اوفرلاند بارك
+                          Overland Park
                         </td>
                         <td class="text-center">
                           $38,735
@@ -507,13 +495,13 @@
                       </tr>
                       <tr>
                         <td>
-                          دوريس غرين
+                          Doris Greene
                         </td>
                         <td>
-                          مالاوي
+                          Malawi
                         </td>
                         <td>
-                          المنع
+                          Feldkirchen in KÃ¤rnten
                         </td>
                         <td class="text-center">
                           $63,542
@@ -521,13 +509,13 @@
                       </tr>
                       <tr>
                         <td>
-                          ميسون بورتر
+                          Mason Porter
                         </td>
                         <td>
-                          تشيلي
+                          Chile
                         </td>
                         <td>
-                          غلوستر
+                          Gloucester
                         </td>
                         <td class="text-center">
                           $78,615
@@ -535,13 +523,13 @@
                       </tr>
                       <tr>
                         <td>
-                          جون بورتر
+                          Jon Porter
                         </td>
                         <td>
-                          البرتغال
+                          Portugal
                         </td>
                         <td>
-                          غلوستر
+                          Gloucester
                         </td>
                         <td class="text-center">
                           $98,615
@@ -575,7 +563,7 @@
             </li>
           </ul>
           <div class="copyright">
-            ©
+            Â©
             <script>
               document.write(new Date().getFullYear())
             </script> made with <i class="tim-icons icon-heart-2"></i> by
@@ -755,8 +743,6 @@
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
-
-
       demo.initDashboardPageCharts();
 
     });

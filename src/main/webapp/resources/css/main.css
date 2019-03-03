@@ -2629,3 +2629,15 @@
 			}
 
 		}
+		
+ 	.menu ul {list-style-type:none;margin:0;padding:0;}
+	.menu li {float:right; }
+	.menu {
+			font-size:100%; 
+			font: bold; 
+			margin-top:20px;
+			
+			
+			}
+
+	

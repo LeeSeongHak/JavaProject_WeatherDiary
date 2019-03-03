@@ -3,22 +3,43 @@
     pageEncoding="UTF-8"%>
 
 <html>
-	<head>
-		<title>Dear My diary</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="resources/css/main.css" />
-	</head>
+<head>
+	<title>Dear My diary</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="resources/css/main.css" />
 	<!-- Scripts -->
-		<script src="resources/js/jquery.min.js"></script>
-		<script src="resources/js/jquery.poptrox.min.js"></script>
-		<script src="resources/js/skel.min.js"></script>
-		<script src="resources/js/main.js"></script>
-	<body><p>다이어리 작성</p>
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/jquery.poptrox.min.js"></script>
+	<script src="resources/js/skel.min.js"></script>
+	<script src="resources/js/main.js"></script>
+	<script>
+	$(document).ready(function(){
+			
+		 $('.diaryWrite').click(function(){
+			 window.open();
+		 }); 
+		 
+	};
+
+	</script>
+	</head>
+	
+	<body>
+<div id="wrapper">	
+	<div class="menu">
+		<ul>
+			<li><a href="">로그아웃</a></li>
+			<li><a href="">내정보</a></li>
+			<li class="diaryWrite">일기 쓰기</li>
+			<li><a href="">홈</a></li>
+			
+		</ul>	
+	</div>
 	
 
 <!-- Wrapper -->
-<div id="wrapper">
+
 
 	<!-- Header -->
 		
