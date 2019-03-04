@@ -8,14 +8,14 @@ public class DiaryVO {
 	private String weather;
 	private String title;
 	private String content;
-	private int inputdate;
+	private String inputdate;
 	private String originalfile;
 	private String savedfile;
 	public DiaryVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public DiaryVO(int num, String id, String emotion, String weather, String title, String content, int inputdate,
+	public DiaryVO(int num, String id, String emotion, String weather, String title, String content, String inputdate,
 			String originalfile, String savedfile) {
 		super();
 		this.num = num;
@@ -28,6 +28,7 @@ public class DiaryVO {
 		this.originalfile = originalfile;
 		this.savedfile = savedfile;
 	}
+	
 	public int getNum() {
 		return num;
 	}
@@ -64,10 +65,10 @@ public class DiaryVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getInputdate() {
+	public String getInputdate() {
 		return inputdate;
 	}
-	public void setInputdate(int inputdate) {
+	public void setInputdate(String inputdate) {
 		this.inputdate = inputdate;
 	}
 	public String getOriginalfile() {

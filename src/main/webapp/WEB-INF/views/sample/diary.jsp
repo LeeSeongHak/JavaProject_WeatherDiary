@@ -22,8 +22,8 @@
   <link href="resources/demo/demo.css" rel="stylesheet" />
   <script>
 function diaryWrite(){
-	window.open('http://localhost:8888/project1/diaryWrite',''
-,'width=700, height=600, left=500, top=100, );
+	window.open('http://localhost:8888/project1/diaryWrite','',
+			'width=700, height=600, left=500, top=100' );
 	 
   }
   </script>

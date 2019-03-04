@@ -6,7 +6,8 @@
 <!-- diary SQL -->
 <mapper namespace="global.sesoc.project1.dao.DiaryMapper">
 <insert id="insertDiary" parameterType="DVO">
-insert into diary (num, id, title, content, )
+insert into diary (num, id, title, content) 
+values(diary_seq.nextval, 'as', #{title}, #{content})
 
 </insert>
 	

@@ -68,9 +68,10 @@ public class DiaryController {
 	
 	//일기 받아옴
 	@ResponseBody
-	@RequestMapping(value = "diaryWrite", method = RequestMethod.POST)
+	@RequestMapping(value = "/diaryWrite", method = RequestMethod.POST)
 	public void diaryWriteForm(DiaryVO diaryVO){
-		
-		dao.insertDiary(diaryVO);
+		logger.error("test");
+		logger.debug("diaryVO: {}", diaryVO);
+		int result = dao.insertDiary(diaryVO);
 	}
 }
