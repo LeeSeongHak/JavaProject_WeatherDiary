@@ -8,7 +8,11 @@
 <script>
 $(document).ready(function(){
 	
-	var latlng = "https://maps.googleapis.com/maps/api/geocode/xml?address="+"seoul"+"&language=ko&sensor=false&key=AIzaSyDBLJ3URwB6HcAHqAJiwwOOqgqwUe2Hu0M"
+	var country = $('#country').html();
+	var country2 = country.message.result.translatedText;
+	alert(country2);
+	
+	var latlng = "https://maps.googleapis.com/maps/api/geocode/xml?address=" + country2 + "&language=ko&sensor=false&key=AIzaSyDBLJ3URwB6HcAHqAJiwwOOqgqwUe2Hu0M"
 
 	$.ajax({
 		url: latlng,
@@ -153,6 +157,9 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+
+<div id="country">${sessionScope.country2}</div>
+
 지역 : <div id="outputDiv0"></div><br>
 현재 기온 : <div id="outputDiv1"></div><br>
 날씨 : <div id="outputDiv2"></div><br>

@@ -14,7 +14,7 @@ function idCheck(){
 
 function join(){
 	var f = document.getElementById("form");
-	var id = document.getElementById("id");
+	var id = document.getElementById("custid");
 	var pw1 = document.getElementById("password1");
 	var pw2 = document.getElementById("password2");
 	var name = document.getElementById("name");
@@ -59,7 +59,7 @@ function join(){
 		<table>
 			<tr>
 				<th><font color="white">아이디</font></th>
-				<td colspan="2"><input type="text" id=id" name="id" placeholder="현재 사용중인 이메일을 입력하세요." size="30"></td>
+				<td colspan="2"><input type="text" id=custid" name="custid" placeholder="현재 사용중인 이메일을 입력하세요." size="30"></td>
 				<td><input type="button" value="ID중복확인" onclick="idCheck()"></td>
 			</tr>
 			<tr>

@@ -19,11 +19,11 @@ public class UserVO {
 		this.region = region;
 	}
 
-	public String getUserid() {
+	public String getid() {
 		return id;
 	}
 
-	public void setUserid(String id) {
+	public void setid(String id) {
 		this.id = id;
 	}
 

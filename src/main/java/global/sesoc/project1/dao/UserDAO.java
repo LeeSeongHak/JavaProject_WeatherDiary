@@ -14,6 +14,7 @@ public class UserDAO {
 	@Autowired
 	SqlSession sqlSession;
 	
+	//login
 	public UserVO login(String id, String password){
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 		
@@ -27,5 +28,20 @@ public class UserDAO {
 		return vo;
 	}
 	
+	//join
+	public int join(UserVO vo){
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+		
+		int cnt = 0;
+		cnt = mapper.join(vo);
+		return cnt;
+	}
 	
+	//ID check
+	public UserVO getCustomer(String id){
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+		UserVO vo = null;
+		vo = mapper.getCustomer(id);
+		return vo;
+	}
 }

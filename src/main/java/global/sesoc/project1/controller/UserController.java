@@ -45,7 +45,9 @@ public class UserController {
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("country", vo.getCountry());
 			session.setAttribute("region", vo.getRegion());
-			return "diary/diaryList";
+			translate(session);
+			
+			return "weatherTest";
 		}
 	}
 	
@@ -55,13 +57,48 @@ public class UserController {
 		return "user/join";
 	}
 	
+	@RequestMapping(value="/join", method=RequestMethod.POST)
+	public String join2(String custid, UserVO vo){
+		vo.setid(custid);
+		int cnt=0;
+		cnt = dao.join(vo);
+		
+		if(cnt==0){
+			return " user/join";
+		}
+		else{
+			return "redirect:/";
+		}
+	}
+	
+	//ID 중복확인
+	@RequestMapping(value="/idCheck", method=RequestMethod.GET)
+	public String idCheck(){
+		return "user/idCheck";
+	}
+	
+	//ID 중복확인2
+	@RequestMapping(value="/idCheck", method=RequestMethod.POST)
+	public String idCheck2(String searchId, Model model){
+		//ID를 전달하여 검색 결과를 VO 객체로 받음
+		UserVO vo = dao.getCustomer(searchId);
+		//검색 결과를 Model에 저장하고 JSP로 다시 이동
+		model.addAttribute("searchId", searchId);
+		//검색한 결과를 담아 리턴.
+		model.addAttribute("searchResult", vo);
+		//검색해서 null인지, 검색안해서 null인지 확인하기 위해 search 하나 더 만든 것. result와 search 모두 null이면 검색조차 안한것.
+		model.addAttribute("search", true);
+		return "user/idCheck";
+	}
+	
 	//@번역
 	@RequestMapping(value = "/translate", method=RequestMethod.GET)
-	public String translate(){
+	public void translate(HttpSession session){
 		String clientId = "ibvum1Y0Dx5JXH1pXGDp";//애플리케이션 클라이언트 아이디값";
         String clientSecret = "4Bwp4Jf6Cg";//애플리케이션 클라이언트 시크릿값";
+        String country = (String)session.getAttribute("country") + " " + (String)session.getAttribute("region");
         try {
-            String text = URLEncoder.encode("만나서 반갑습니다.", "UTF-8");
+            String text = URLEncoder.encode(country, "UTF-8");
             String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
@@ -89,9 +126,11 @@ public class UserController {
             }
             br.close();
             logger.debug(response.toString());
+            session.setAttribute("country2", response.toString());
+            
         } catch (Exception e) {
             logger.debug(e.toString());
         }
-		return "translate";
+        return;
 	}
 }
