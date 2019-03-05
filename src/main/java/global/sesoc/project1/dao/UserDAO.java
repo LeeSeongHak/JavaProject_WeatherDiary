@@ -10,6 +10,7 @@ import global.sesoc.project1.vo.UserVO;
 
 @Repository
 public class UserDAO {
+	
 
 	@Autowired
 	SqlSession sqlSession;
@@ -38,10 +39,13 @@ public class UserDAO {
 	}
 	
 	//ID check
-	public UserVO getCustomer(String id){
+	public int getCustomer(String id){
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-		UserVO vo = null;
-		vo = mapper.getCustomer(id);
-		return vo;
+		int cnt = 0;
+		
+		if(!(mapper.getCustomer(id).getid().isEmpty())){
+			cnt++;
+		}
+		return cnt;
 	}
 }

@@ -16,6 +16,7 @@ $(document).ready(function(){
 	});
 	
 	function split (con) {
+		
 		var loc = $(con).find("location").text();
 		
 		$.ajax({
