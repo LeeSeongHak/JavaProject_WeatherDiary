@@ -1,11 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<script src="resources/js/jquery-3.3.1.min.js"></script>
-<script>
 $(document).ready(function(){
 	
 	var country = $('#country').html();
@@ -33,7 +25,7 @@ $(document).ready(function(){
 			data: {loc: loc},
 			dataType: 'text',
 			success: function(){
-				alert('¼º°ø');
+				alert('ì„±ê³µ');
 			}
 		});
 	}
@@ -49,96 +41,96 @@ $(document).ready(function(){
 	    type: "GET",
 	    async: "false",
 	    success: function(resp) {
-	    	//Áö¿ª
+	    	//ì§€ì—­
 	    	var country = resp.sys.country;
 	    	var name = resp.name;
 	    	$("#outputDiv0").html(country + " - " + name);
 	    	
-	    	//±â¿Â
+	    	//ê¸°ì˜¨
 	    	var temp = resp.main.temp- 273.15;
 	    	temp = Math.floor(temp*10)/10;
 	    	$("#outputDiv1").html(temp);
 	        
-	    	//³¯¾¾ ÄÁµð¼Ç
+	    	//ë‚ ì”¨ ì»¨ë””ì…˜
 	    	var weather = 0;
 	    	var weather2 = null;
 	    	var weather3 = "";
 	    	for(var i = 0; i < resp.weather.length; i++){
 	    		weather = resp.weather[i].id;
 	    		if(weather >=200 && weather <= 232){
-	    			weather2 = "ÃµµÕ";
+	    			weather2 = "ì²œë‘¥";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather >= 300 && weather <= 321){
-	    			weather2 = "°¡¶ûºñ";
+	    			weather2 = "ê°€ëž‘ë¹„";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather >= 500 && weather <= 531){
-	    			weather2 = "ºñ";
+	    			weather2 = "ë¹„";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather >= 600 && weather <= 622){
-	    			weather2 = "´«";
+	    			weather2 = "ëˆˆ";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 701 || weather == 721 || weather == 741){
-	    			weather2 = "¾È°³";
+	    			weather2 = "ì•ˆê°œ";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 711){
-	    			weather2 = "¿¬±â";
+	    			weather2 = "ì—°ê¸°";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 731 || weather == 751 || weather == 761){
-	    			weather2 = "¸ð·¡, ¸ÕÁö";
+	    			weather2 = "ëª¨ëž˜, ë¨¼ì§€";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 762){
-	    			weather2 = "È­»êÀç";
+	    			weather2 = "í™”ì‚°ìž¬";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 771){
-	    			weather2 = "½ºÄÝ½º";
+	    			weather2 = "ìŠ¤ì½œìŠ¤";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 781){
-	    			weather2 = "ÆøÇ³";
+	    			weather2 = "í­í’";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 800){
-	    			weather2 = "¸¼Àº ÇÏ´Ã";
+	    			weather2 = "ë§‘ì€ í•˜ëŠ˜";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather == 801){
-	    			weather2 = "±¸¸§ ¾ø´Â ³¯¾¾";
+	    			weather2 = "êµ¬ë¦„ ì—†ëŠ” ë‚ ì”¨";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
 	    		}
 	    		if(weather >= 802 && weather <= 804){
-	    			weather2 = "±¸¸§ ÀÖ´Â ³¯¾¾";
+	    			weather2 = "êµ¬ë¦„ ìžˆëŠ” ë‚ ì”¨";
 	    			if(weather3.search(weather2) == -1){
 	    				weather3 = weather2 + " " + weather3;
 	    			}
@@ -148,26 +140,3 @@ $(document).ready(function(){
 	    }
 	});
 })
-
-</script>
-<title>Insert title here</title>
-<script>
-
-</script>
-</head>
-<body>
-
-<div id="country">${sessionScope.country2}</div>
-
-Áö¿ª : <div id="outputDiv0"></div><br>
-ÇöÀç ±â¿Â : <div id="outputDiv1"></div><br>
-³¯¾¾ : <div id="outputDiv2"></div><br>
-
-À§µµ: ${sessionScope.lat}<br>
-°æµµ: ${sessionScope.lng}<br>
-
-<div id="lat1">${sessionScope.lat}</div>
-<div id="lon1">${sessionScope.lng}</div>
-
-</body>
-</html>

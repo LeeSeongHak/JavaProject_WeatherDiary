@@ -20,6 +20,8 @@
   <link href="resources/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="resources/demo/demo.css" rel="stylesheet" />
+  <script src="resources/js/jquery-3.3.1.min.js"></script>
+  <script src="resources/js/weather.js"></script>
   <script>
 function diaryWrite(){
 	window.open('http://localhost:8888/project1/diaryWrite','',
@@ -178,6 +180,19 @@ function diaryWrite(){
         </div>
       </div>
       <!-- End Navbar -->
+      
+      <div id="country">${sessionScope.country2}</div>
+
+		지역 : <div id="outputDiv0"></div><br>
+		현재 기온 : <div id="outputDiv1"></div><br>
+		날씨 : <div id="outputDiv2"></div><br>
+		
+		위도: ${sessionScope.lat}<br>
+		경도: ${sessionScope.lng}<br>
+		
+		<div id="lat1">${sessionScope.lat}</div>
+		<div id="lon1">${sessionScope.lng}</div>
+      
       <div class="content">
         <div class="row">
           <div class="col-md-12">

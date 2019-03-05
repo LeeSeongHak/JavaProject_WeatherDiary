@@ -47,7 +47,7 @@ public class UserController {
 			session.setAttribute("region", vo.getRegion());
 			translate(session);
 			
-			return "weatherTest";
+			return "sample/diary";
 		}
 	}
 	
