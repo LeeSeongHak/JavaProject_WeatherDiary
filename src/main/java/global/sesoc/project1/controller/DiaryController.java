@@ -3,6 +3,8 @@ package global.sesoc.project1.controller;
 
 
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +24,19 @@ public class DiaryController {
 	@Autowired
 	DiaryDAO dao;
 	
-	//홈
+
 	@RequestMapping(value = "/diaryList", method = RequestMethod.GET )
 	public String diary_board(){
 		
 		return "diary/diaryList";
 	}
-	//일기쓰기 페이지
+
 	@RequestMapping(value = "/diaryWrite", method = RequestMethod.GET )
 	public String diaryWrite(){
 		
 		return "diary/diaryWrite";
 	}
-	//부트스트랩 페이지
+
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET )
 	public String dashboard(){
 		
@@ -66,12 +68,17 @@ public class DiaryController {
 		return "sample/userProfile";
 	}
 	
-	//일기 받아옴
 	@ResponseBody
 	@RequestMapping(value = "/diaryWrite", method = RequestMethod.POST)
 	public void diaryWriteForm(DiaryVO diaryVO){
 		logger.error("test");
 		logger.debug("diaryVO: {}", diaryVO);
 		int result = dao.insertDiary(diaryVO);
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session){
+		session.invalidate();
+		return "home";
 	}
 }

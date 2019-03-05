@@ -125,8 +125,12 @@ public class UserController {
                 response.append(inputLine);
             }
             br.close();
-            logger.debug(response.toString());
-            session.setAttribute("country2", response.toString());
+            String a = response.toString();
+            String[] aa = a.split(":");
+            a = aa[8].substring(1);
+            a = a.substring(0, a.length()-4);
+            
+            session.setAttribute("country2", a);
             
         } catch (Exception e) {
             logger.debug(e.toString());

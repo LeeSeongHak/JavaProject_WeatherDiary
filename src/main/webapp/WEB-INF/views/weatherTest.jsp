@@ -9,9 +9,8 @@
 $(document).ready(function(){
 	
 	var country = $('#country').html();
-	var country2 = country.message.result.translatedText;
 	
-	var latlng = "https://maps.googleapis.com/maps/api/geocode/xml?address=" + country2 + "&language=ko&sensor=false&key=AIzaSyDBLJ3URwB6HcAHqAJiwwOOqgqwUe2Hu0M"
+	var latlng = "https://maps.googleapis.com/maps/api/geocode/xml?address=" + country + "&language=ko&sensor=false&key=AIzaSyDBLJ3URwB6HcAHqAJiwwOOqgqwUe2Hu0M"
 
 	$.ajax({
 		url: latlng,
