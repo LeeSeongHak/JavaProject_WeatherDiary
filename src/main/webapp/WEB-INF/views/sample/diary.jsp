@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="resources/images/apple-icon.png">
   <link rel="icon" type="image/png" href="resources/images/favicon.png">
   <title>
-    Black Dashboard by Creative Tim
+    
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -17,12 +17,9 @@
   <!-- Nucleo Icons -->
   <link href="resources/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="resources/css/black-dashboard.css?v=1.0.0" rel="stylesheet" /
-  <link href="resources/css/weather.css" rel="stylesheet" />>
+  <link href="resources/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="resources/demo/demo.css" rel="stylesheet" />
-  <script src="resources/js/jquery-3.3.1.min.js"></script>
-  <script src="resources/js/weather.js"></script>
   <script>
 function diaryWrite(){
 	window.open('http://localhost:8888/project1/diaryWrite','',
@@ -159,7 +156,7 @@ function diaryWrite(){
                   </li>
                   <li class="dropdown-divider"></li>
                   <li class="nav-link">
-                    <a href="logout" class="nav-item dropdown-item">Log out</a>
+                    <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
                   </li>
                 </ul>
               </li>
@@ -181,37 +178,6 @@ function diaryWrite(){
         </div>
       </div>
       <!-- End Navbar -->
-      
-      <!-- weather -->
-      <br><br><br>
-      <div id="country" hidden="">${sessionScope.country2}</div>
-		<div align="center">
-		  <table class="rwd-table" >
-			  <tr>
-			    <th>지역</th>
-			    <td data-th="지역"><div id="outputDiv0"></div></td>
-			  </tr>
-			  <tr>
-			    <th>현재 기온</th>
-			    <td data-th="현재기온"><div id="outputDiv1"></div></td>
-			  </tr>
-			  <tr>
-			    <th>날씨</th>
-			    <td data-th="날씨"><div id="outputDiv2"></div></td>
-			  </tr>
-			  <tr>
-			     <th>위도</th>
-			    <td data-th="위도">${sessionScope.lat}</td>
-			  </tr>  
-			  <tr>
-			     <th>경도</th>
-			    <td data-th="경도">${sessionScope.lng}</td>
-			  </tr>  
-			</table>	
-		</div>
-		<div id="lat1" hidden="">${sessionScope.lat}</div>
-		<div id="lon1" hidden="">${sessionScope.lng}</div>
-		
       <div class="content">
         <div class="row">
           <div class="col-md-12">
@@ -219,7 +185,7 @@ function diaryWrite(){
               <div class="card-header">
                 <h3 class="title">&nbsp&nbspDiary</h3>
              </div>
-             	<p>__님 오늘 어땠나요?<a href='javascript:void(0);'onclick="diaryWrite();">일기작성</span><p>
+             	<p>${sessionScope.id}님 오늘 어땠나요?<a href='javascript:void(0);'onclick="diaryWrite();">일기작성</span><p>
           
            </div>
            
@@ -304,7 +270,7 @@ function diaryWrite(){
   <script src="resources/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
   <!-- Place this tag in your head or just before your close body tag. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=c1ae780151cf0ef8cdce02451a0dcc70"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
   <script src="resources/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -381,13 +347,13 @@ function diaryWrite(){
           // we simulate the window Resize so the charts will get updated in realtime.
           var simulateWindowResize = setInterval(function() {
             window.dispatchEvent(new Event('resize'));
-	          }, 180);
-	
-	          // we stop the simulation of Window Resize after the animations are completed
-	          setTimeout(function() {
-	            clearInterval(simulateWindowResize);
-	          }, 1000);
-	        });
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
 
         $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
           var $btn = $(this);

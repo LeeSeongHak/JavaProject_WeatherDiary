@@ -18,7 +18,8 @@ function formCheck(){
 function selectId(){
 	//나를 열어준 창 - 오프너
 	var id = opener.document.getElementById('custid');
-	id.value = '${searchId}';
+	var searchid = '${searchId}';
+	id.value = searchid;
 	this.close();
 }
 </script>

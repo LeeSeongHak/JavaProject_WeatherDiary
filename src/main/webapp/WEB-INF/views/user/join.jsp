@@ -8,27 +8,8 @@
 <script src="resources/js/jquery-3.3.1.min.js"></script>
 <script>
 function idCheck(){
-   var id = $('#custid').val();
-   
-   $.ajax({
-      url: 'idCheck',
-      type: 'post',
-      data: {id: id},
-      dataType: 'text',
-      success: function(result){        
-         var str = '<span ';
-         if(result == '1'){
-            str += 'style="color: blue"> 사용가능합니다</span>'
-            $('#custid2').html(str);
-         }else {
-            str += 'style="color: red"> 존재하는 아이디입니다</span>'
-            $('#custid2').html(str);
-         }   
-      },
-      error: function(e){
-         alert(JSON.stringify(e));
-      }
-   });
+	//("창 링크(controller의 action값. 주소창에 직접 링크 띄우는 것이므로 get방식.)", "창 이름", "창의 모양")
+	window.open("idCheck", "idWin", "top=200, left=500, width=400, height=400, menubar=no");
 }
 
 function join(){
@@ -68,7 +49,6 @@ function join(){
 		f.submit();
 	}
 }
-
 </script>
 </head>
 <body>
@@ -79,9 +59,7 @@ function join(){
 		<table>
 			<tr>
 				<th><font color="white">아이디</font></th>
-				<td colspan="2"><input type="text" id="custid" name="custid" placeholder="현재 사용중인 이메일을 입력하세요." size="30">
-					<a id="custid2"></a>
-				</td>
+				<td colspan="2"><input type="text" id=custid" name="custid" placeholder="현재 사용중인 이메일을 입력하세요." size="30"></td>
 				<td><input type="button" value="ID중복확인" onclick="idCheck()"></td>
 			</tr>
 			<tr>

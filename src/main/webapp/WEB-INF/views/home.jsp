@@ -35,11 +35,16 @@ function check(){
         <input type="password" name="password" placeholder="Password" id="password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">로그인</button>
     </form>
+        <button type="submit" class="btn btn-primary btn-block btn-large">아이디 찾기</button><br>
     <form action="join" method="get">
         <button type="submit" class="btn btn-primary btn-block btn-large">회원가입</button>
     </form>
     
 </div>
-
+<div><p><a href="map"> 맵 테스트 </a></p></div>
+<div><p><a href="weather"> 날씨 테스트 </a></p></div>
+<div><p><a href="diaryList">다이어리 리스트</a></p></div>
+<div><p><a href="diary">부트스트랩</a></p></div>
+<div><p><a href="translate">번역</a></p></div>
 </body>
 </html>

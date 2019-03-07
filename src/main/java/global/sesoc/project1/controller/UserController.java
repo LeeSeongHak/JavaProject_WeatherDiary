@@ -16,7 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project1.dao.UserDAO;
 import global.sesoc.project1.vo.UserVO;
@@ -48,7 +47,7 @@ public class UserController {
 			session.setAttribute("region", vo.getRegion());
 			translate(session);
 			
-			return "sample/diary";
+			return "weatherTest";
 		}
 	}
 	
@@ -73,15 +72,23 @@ public class UserController {
 	}
 	
 	//ID 중복확인
-	@ResponseBody
+	@RequestMapping(value="/idCheck", method=RequestMethod.GET)
+	public String idCheck(){
+		return "user/idCheck";
+	}
+	
+	//ID 중복확인2
 	@RequestMapping(value="/idCheck", method=RequestMethod.POST)
-	public String idCheck2(String searchId){
+	public String idCheck2(String searchId, Model model){
 		//ID를 전달하여 검색 결과를 VO 객체로 받음
-		int cnt;
-		cnt = dao.getCustomer(searchId);
-		
-		String a = String.valueOf(cnt);
-		return a;
+		UserVO vo = dao.getCustomer(searchId);
+		//검색 결과를 Model에 저장하고 JSP로 다시 이동
+		model.addAttribute("searchId", searchId);
+		//검색한 결과를 담아 리턴.
+		model.addAttribute("searchResult", vo);
+		//검색해서 null인지, 검색안해서 null인지 확인하기 위해 search 하나 더 만든 것. result와 search 모두 null이면 검색조차 안한것.
+		model.addAttribute("search", true);
+		return "user/idCheck";
 	}
 	
 	//@번역
@@ -118,18 +125,12 @@ public class UserController {
                 response.append(inputLine);
             }
             br.close();
-            String a = response.toString();
-            String[] aa = a.split(":");
-            a = aa[8].substring(1);
-            a = a.substring(0, a.length()-4);
-            
-            session.setAttribute("country2", a);
+            logger.debug(response.toString());
+            session.setAttribute("country2", response.toString());
             
         } catch (Exception e) {
             logger.debug(e.toString());
         }
         return;
 	}
-	
-
 }
